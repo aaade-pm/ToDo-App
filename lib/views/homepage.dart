@@ -22,7 +22,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     //if user is just using the app for the first time meaning there is nothing to get from the database
     if (_myBox.get('TODOLIST') == null) {
@@ -150,7 +149,7 @@ class _HomePageState extends State<HomePage> {
                   onChanged: (value) => completed(value, index),
                   taskDescription: db.toDoList[index][2].toString(),
                   taskTitle: db.toDoList[index][0],
-                  onPressedAction: (BuildContext) {
+                  onPressedAction: (BuildContext context) {
                     deleteFunction(context, index);
                   },
                 ),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class MyButton extends StatelessWidget {
   final String buttonName;
-  final iconType;
+  dynamic iconType;
   VoidCallback onPressed;
   MyButton({
     super.key,

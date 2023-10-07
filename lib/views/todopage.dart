@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:focused_menu/focused_menu.dart';
+import 'package:focused_menu/modals.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TodoPage extends StatelessWidget {
@@ -23,6 +25,30 @@ class TodoPage extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
+        actions: [
+          FocusedMenuHolder(
+            menuItemExtent: 60,
+            openWithTap: true,
+            menuWidth: MediaQuery.of(context).size.width * 0.4,
+            menuItems: <FocusedMenuItem>[
+              FocusedMenuItem(
+                title: const Text('EDIT'),
+                onPressed: () {},
+                trailingIcon: const Icon(Icons.edit_document),
+              ),
+              FocusedMenuItem(
+                title: const Text('DELETE'),
+                onPressed: () {},
+                trailingIcon: const Icon(Icons.delete_outline),
+              )
+            ],
+            onPressed: () {},
+            child: const Icon(Icons.more_vert),
+          ),
+          const SizedBox(
+            width: 10,
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -36,7 +62,7 @@ class TodoPage extends StatelessWidget {
                 fontSize: 21,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
@@ -67,7 +93,7 @@ class TodoPage extends StatelessWidget {
                 fontSize: 21,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Expanded(
